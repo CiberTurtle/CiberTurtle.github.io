@@ -1,0 +1,61 @@
+// ----- Box Sizing ----- //
+$size-prefix: ("w": "width", "h": "height",)
+
+@each $key, $val in $size-prefix
+	.#{$key}-fit
+		#{$val}: fit-content
+	
+	.#{$key}-full
+		#{$val}: 100%
+	
+	.#{$key}-px,
+	.#{$key}-1px
+		#{$val}: 1px
+	
+	.#{$key}-2
+		#{$val}: 2rem
+	.#{$key}-3
+		#{$val}: 3rem
+	.#{$key}-4
+		#{$val}: 4rem
+
+
+// ----- Interbox ----- //
+$inter-prefix: ("p": "padding", "pl": "padding-left","pr": "padding-right", "pt": "padding-top", "pb": "padding-bottom", "px": "padding-inline", "py": "padding-block", "m": "margin", "ml": "margin-left", "mr": "margin-right", "mt": "margin-top", "mb": "margin-bottom", "mx": "margin-inline", "my": "margin-block")
+
+@each $key, $val in $inter-prefix
+	.#{$key}-0
+		#{$val}: 0
+	.#{$key}-1
+		#{$val}: 1rem
+	.#{$key}-2
+		#{$val}: 2rem
+	.#{$key}-4
+		#{$val}: 4rem
+	.#{$key}-6
+		#{$val}: 6rem
+	.#{$key}-8
+		#{$val}: 8rem
+	
+	.#{$key}-1\/4
+		#{$val}: .25rem
+	.#{$key}-1\/2
+		#{$val}: .25rem
+	.#{$key}-3\/2,
+	.#{$key}-1\.5
+		#{$val}: 1.5rem
+
+
+// ----- Rounding ----- //
+.r-0
+	border-radius: 0
+.r-1
+	border-radius: 1rem
+.r-2
+	border-radius: 2rem
+
+.r-1\/2
+	border-radius: .5rem
+.r-3\/2,
+.r-1\.5
+	border-radius: 1.5rem

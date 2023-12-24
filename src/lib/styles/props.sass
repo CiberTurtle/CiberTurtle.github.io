@@ -1,0 +1,36 @@
+@use 'sass:math'
+@use 'sass:list'
+
+@function lerp($from, $to, $t)
+	@return ($to - $from) * $t + $from
+
+html
+	--font-fira: 'Fira Sans', sans-serif
+	--font-spoke: 'BespokeSans-Variable', sans-serif
+	--font-mono: 'JetBrains Mono Variable', monospace
+	
+	
+	
+	// --hue: 0
+	// --hue: 180
+	--hue: 215
+	
+	$shades: 5, 10, 15, 20, 30, 40, 50, 60, 70, 80, 90, 95
+	$shade-range: 100
+	$chromas: 0.0114, 0.0331, 0.05, 0.0774, 0.1275, 0.1547, 0.1355, 0.1164, 0.0974, 0.0782, 0.0588, 0.0491
+	
+	$lightness-a: .89
+	$lightness-b: .13
+	$lightness-a: 1
+	$lightness-b: .0
+	
+	@for $index from 1 through list.length($shades)
+		$shade: list.nth($shades, $index)
+		$shade-ratio: math.div($shade, $shade-range)
+		
+		$chroma: list.nth($chromas, $index)
+		$lightness: lerp($lightness-a, $lightness-b, $shade-ratio)
+		
+		--clr-#{$shade}: #{oklch($lightness $chroma var(--hue))}
+	
+	--shadow-sm: 0 1px 2px rgb(0 0 0 / .05)

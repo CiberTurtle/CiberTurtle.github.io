@@ -1,0 +1,40 @@
+.btn {
+	--raise: 8px;
+	--border: 6px;
+
+	display: flex;
+	width: fit-content;
+	gap: 1rem;
+	padding: 1rem 2rem;
+
+	font-weight: bold;
+	font-size: 1.5rem;
+	line-height: 2rem;
+	text-align: center;
+
+	border-radius: 1rem;
+	background: white;
+	color: black;
+	box-shadow:
+		0 var(--raise) 0 0 var(--clr, #a0938e),
+		0 var(--raise) 0 var(--border) black,
+		0 0 0 var(--border) black;
+
+	transition:
+		translate 300ms cubic-bezier(0.34, 1.56, 0.64, 1),
+		box-shadow 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+	rotate: -2.5deg;
+
+	&:hover {
+		translate: 0 8px;
+		box-shadow:
+			0 0px 0 0 #a0938e,
+			0 0px 0 var(--border) black,
+			0 0 0 var(--border) black;
+
+		transition:
+			translate 200ms cubic-bezier(0.25, 1, 0.5, 1),
+			box-shadow 200ms cubic-bezier(0.25, 1, 0.5, 1);
+	}
+}

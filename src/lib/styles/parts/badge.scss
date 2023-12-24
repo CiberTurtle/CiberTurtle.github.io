@@ -1,0 +1,74 @@
+.badge {
+	cursor: help;
+	position: relative;
+	width: 4rem;
+	height: 4rem;
+	rotate: -10deg;
+	z-index: 100;
+
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+
+	filter: drop-shadow(1Q 1Q 0 transparent);
+	transition: filter 100ms;
+
+	&.jam {
+		// background-image: url('icons/jam.svg');
+		background-image: url('icons/jam.png');
+		image-rendering: pixelated;
+	}
+
+	&.jam-ld {
+		background-image: url('icons/jam-ld.png');
+		image-rendering: pixelated;
+	}
+
+	&.jam-20sec {
+		background-image: url('icons/jam-20sec.png');
+		image-rendering: pixelated;
+	}
+
+	&.jam-score {
+		background-image: url('icons/jam-score.png');
+		image-rendering: pixelated;
+	}
+
+	&.jam-gmtk {
+		background-image: url('icons/jam-gmtk.png');
+		image-rendering: pixelated;
+	}
+
+	&.jam-8bit2inf {
+		background-image: url('icons/jam-8bit2inf.png');
+		image-rendering: pixelated;
+	}
+
+	&::after {
+		rotate: 10deg;
+		pointer-events: none;
+		content: attr(data-tooltip);
+		position: absolute;
+		top: 5.5rem;
+		left: 3.5rem;
+		max-width: 50vw;
+		width: max-content;
+		padding: .5rem 1rem;
+		border: solid 2px;
+		background-color: white;
+		color: black;
+		font-weight: bold;
+		border-radius: 1rem;
+		border-top-left-radius: 0;
+		opacity: 0;
+		transition: opacity 200ms;
+	}
+
+	&:hover {
+		filter: drop-shadow(8px 8px 0 black);
+
+		&::after {
+			opacity: 1;
+		}
+	}
+}

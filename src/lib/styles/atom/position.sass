@@ -1,0 +1,44 @@
+// ----- Position Modes ----- //
+.relative
+	position: relative
+.absolute
+	position: absolute
+.static
+	position: static
+.sticky
+	position: sticky
+
+
+// ----- Inset ----- //
+.inset
+	inset: 0
+.inset-1
+	inset: 1rem
+.inset-2
+	inset: 2rem
+
+.inset-y
+	inset-block: 0
+.inset-x
+	inset-inline: 0
+
+
+// ----- Position ----- //
+$dirs: left, right, top, bottom
+@each $dir in $dirs
+	.#{$dir}
+		#{$dir}: 0
+	.#{$dir}-1\/2
+		#{$dir}: .5rem
+	.#{$dir}-1
+		#{$dir}: 1rem
+	.#{$dir}-1\.5
+		#{$dir}: 1.5rem
+	.#{$dir}-2
+		#{$dir}: 2rem
+
+
+// ----- Z-Index ----- //
+@for $i from 1 through 10
+	.z-#{$i}
+		z-index: $i
