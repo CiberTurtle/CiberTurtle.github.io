@@ -1,14 +1,19 @@
-import type { Readable } from 'svelte/store'
-
 import _hljs from 'highlight.js'
 import type { Action } from 'svelte/action'
 
 
-export const hljs: Action<HTMLElement, { code: string, lang: string }> = (node, param) => {
-	const result = _hljs.highlight(param.code, {
-		language: param.lang,
+export const hljs: Action<HTMLElement, { code: string, lang: string }> = (node, params) => {
+	const result = _hljs.highlight(params.code, {
+		language: params.lang,
 	})
 	node.innerHTML = result.value
 
-	return {}
+	return {
+		update(params) {
+			const result = _hljs.highlight(params.code, {
+				language: params.lang,
+			})
+			node.innerHTML = result.value
+		},
+	}
 }
