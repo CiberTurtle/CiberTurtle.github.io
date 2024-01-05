@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '$lib/styles/hack.scss'
+	import '$lib/styles/main.sass'
 	import '@fontsource-variable/jetbrains-mono'
 
 	import { blob_to_data_uri } from '$lib/util'

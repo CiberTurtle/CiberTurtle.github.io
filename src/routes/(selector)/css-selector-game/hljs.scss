@@ -1,0 +1,48 @@
+html {
+	--red: #e6482e;
+	--orange: #f47e1b;
+	--yellow: #f4b41b;
+	--lime: #b6d53c;
+	--green: #71aa34;
+	--cyan: #28ccdf;
+	--blue: #3978a8;
+	--pink: #cd6093;
+	--purple: #8e478c;
+	--gray: #7d7071;
+}
+
+
+// HTML
+.hljs-tag {
+	color: var(--gray);
+}
+
+.hljs-name {
+	color: var(--red);
+}
+
+.hljs-attr {
+	color: var(--cyan);
+}
+
+.hljs-string {
+	color: var(--yellow);
+}
+
+
+// CSS
+.hljs-selector-tag {
+	color: var(--red);
+}
+
+.hljs-selector-id {
+	color: var(--pink);
+}
+
+.hljs-selector-class {
+	color: var(--cyan);
+}
+
+.hljs-selector-pseudo {
+	color: var(--lime);
+}
