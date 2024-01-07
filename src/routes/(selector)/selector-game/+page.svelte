@@ -15,17 +15,17 @@
 	let css_selector = ''
 	let html_code = ''
 	let preview_element: HTMLElement
-	let level_index = Number($page.url.searchParams.get('level')) || 0
+	let level_index = browser ? Number($page.url.searchParams.get('level')) || 0 : 0
 	let show_hints = false
 
 	$: {
 		level_index = Math.max(Math.min(level_index, level_list.length - 1), 0)
 		html_code = level_list[level_index].html
-		$page.url.searchParams.set('level', level_index.toString())
 
 		clear_selector()
 
 		if (browser) {
+			$page.url.searchParams.set('level', level_index.toString())
 			goto($page.url, {})
 		}
 	}
