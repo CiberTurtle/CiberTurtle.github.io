@@ -4,6 +4,7 @@ html {
 	--yellow: #f4b41b;
 	--lime: #b6d53c;
 	--green: #71aa34;
+	--dark-green: #397b44;
 	--cyan: #28ccdf;
 	--blue: #3978a8;
 	--pink: #cd6093;
@@ -12,9 +13,23 @@ html {
 }
 
 
+.hljs-comment {
+	color: var(--dark-green);
+}
+
+.hide-comments .hljs-comment {
+	opacity: 0;
+	user-select: none;
+}
+
+
 // HTML
 .hljs-tag {
 	color: var(--gray);
+
+	&:hover {
+		background-color: #39314b;
+	}
 }
 
 .hljs-name {
