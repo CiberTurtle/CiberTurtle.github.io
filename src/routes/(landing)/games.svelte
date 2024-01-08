@@ -7,7 +7,7 @@
 <section class="flex-col pb-8">
 	<div class="bento">
 		<div class="card" style="--clr: #cd6093; --shadow: #000000">
-			<img class="cover" src="./images/trix-cover.png" />
+			<img class="cover" src="./images/trix-cover.webp" />
 			<div class="screen">
 				<div class="badges">
 					<div class="badge jam-20sec" data-tooltip="Entry for 20 Second Jam 2023"></div>
@@ -23,7 +23,7 @@
 		</div>
 
 		<div class="card" style="--clr: #3978a8; --shadow: #3978a8; grid-column: 0 / 3;">
-			<img class="cover" loading="lazy" src="./images/tidal-towns-cover.png" />
+			<img class="cover" loading="lazy" src="./images/tidal-towns-cover.webp" />
 			<div class="screen">
 				<div class="badges">
 					<div class="badge jam-ld" data-tooltip="Entry for Ludum Dare 54"></div>
@@ -43,7 +43,7 @@
 		</div>
 
 		<div class="card" style="--clr: #e6482e; --shadow: #7a444a;">
-			<img class="cover" loading="lazy" src="./images/ball-cover.png" />
+			<img class="cover" loading="lazy" src="./images/ball-cover.webp" />
 			<div class="screen">
 				<div class="badges">
 					<div class="badge jam-score" data-tooltip="Entry for FODDIAN JAM (Space Score)"></div>
@@ -61,7 +61,7 @@
 		</div>
 
 		<div class="card" style="--clr: #f47e1b; --shadow: #397b44;">
-			<img class="cover" loading="lazy" src="./images/space-cow-cover.png" />
+			<img class="cover" loading="lazy" src="./images/space-cow-cover.webp" />
 			<div class="screen">
 				<div class="badges">
 					<div class="badge jam-gmtk" data-tooltip="Entry for GMTK Game Jam 2023"></div>
@@ -79,7 +79,7 @@
 		</div>
 
 		<div class="card" style="--clr: #71aa34; --shadow: #39314b;">
-			<img class="cover" loading="lazy" src="./images/vines-cover.png" />
+			<img class="cover" loading="lazy" src="./images/vines-cover.webp" />
 			<div class="screen">
 				<div class="badges">
 					<div
@@ -98,7 +98,7 @@
 		</div>
 
 		<div class="card" style="--clr: #f4b41b; --shadow: #f4b41b;">
-			<img class="cover" loading="lazy" src="./images/poultry-cover.png" />
+			<img class="cover" loading="lazy" src="./images/poultry-cover.webp" />
 			<div class="screen">
 				<h3 class="invis">Poultry Pounders</h3>
 			</div>

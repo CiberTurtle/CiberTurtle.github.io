@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '@fontsource-variable/jetbrains-mono'
-	import '@fontsource/fira-sans'
+	import '@fontsource/fira-sans/400.css'
+	import '@fontsource/fira-sans/600.css'
 
 	import '$lib/styles/main.sass'
 	import './styles.scss'
@@ -11,23 +12,24 @@
 	import { page } from '$app/stores'
 	import { hljs } from '$lib/directives'
 	import { level_list } from './levels'
+	import { onMount } from 'svelte'
 
 	let css_selector = ''
 	let html_code = ''
 	let preview_element: HTMLElement
-	let level_index = browser ? Number($page.url.searchParams.get('level')) || 0 : 0
+	let level_index = (Number($page.url.searchParams.get('level')) || 1) - 1
 	let show_hints = false
+	let error_string = ''
 
 	$: {
 		level_index = Math.max(Math.min(level_index, level_list.length - 1), 0)
-		html_code = level_list[level_index].html
+		const level = level_list[level_index]
+		html_code = level.html
 
 		clear_selector()
 
-		if (browser) {
-			$page.url.searchParams.set('level', level_index.toString())
-			goto($page.url, {})
-		}
+		$page.url.searchParams.set('level', (level_index + 1).toString())
+		goto($page.url, {})
 	}
 
 	$: {
@@ -39,15 +41,25 @@
 
 			const selectable_elements = preview_element.querySelectorAll('[select-me]')
 
-			let selected_elements: Element[] = []
-			try {
-				selected_elements = Array.from(preview_element.querySelectorAll(css_selector).values())
-			} catch {}
+			let selector = css_selector.replaceAll('body', 'aside')
 
-			let selected_wrong = false
-			for (const element of selected_elements) {
-				if (!element.hasAttribute('select-me')) selected_wrong = true
-				element.classList.toggle('selected', true)
+			if (selector.indexOf('select-me') >= 0) {
+				error_string = 'Nice try'
+			} else if (selector.indexOf(',') >= 0) {
+				error_string = 'Take it one selector at a time'
+			} else {
+				error_string = ''
+
+				let selected_elements: Element[] = []
+				try {
+					selected_elements = Array.from(preview_element.querySelectorAll(selector).values())
+				} catch {}
+
+				let selected_wrong = false
+				for (const element of selected_elements) {
+					if (!element.hasAttribute('select-me')) selected_wrong = true
+					element.classList.toggle('selected', true)
+				}
 			}
 		}
 	}
@@ -88,6 +100,7 @@
 			{#each level_list as level, index}
 				<option value={index}>Level {index + 1}: {level.title}</option>
 			{/each}
+			<option disabled>+ more to come...</option>
 		</select>
 
 		<button
@@ -120,6 +133,7 @@
 	<div class="pane selector-editor">
 		<div class="bar">
 			<div class="tab"> Your Selector </div>
+			<div class="controls error">{error_string}</div>
 		</div>
 		<div class="content">
 			<div class="code-editor">
@@ -166,8 +180,8 @@
 		<div class="bar">
 			<div class="tab"> Web Browser </div>
 		</div>
-		<div bind:this={preview_element} class="content">
+		<aside bind:this={preview_element} class="content">
 			{@html html_code}
-		</div>
+		</aside>
 	</div>
 </div>

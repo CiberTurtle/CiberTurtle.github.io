@@ -4,6 +4,7 @@ export type Level = {
 }
 
 export const level_list: Level[] = [
+	// General
 	{
 		title: 'Introduction',
 		html: (await import('./introduction.html?raw')).default,
@@ -24,10 +25,18 @@ export const level_list: Level[] = [
 		title: 'A Lot of Things',
 		html: (await import('./a-lot-of-things.html?raw')).default,
 	},
+
+	// Nesting
 	{
 		title: 'Know-It-All',
 		html: (await import('./know-it-all.html?raw')).default,
 	},
+	{
+		title: 'Baking',
+		html: (await import('./baking.html?raw')).default,
+	},
+
+	// Pseudo Selectors
 	{
 		title: 'First',
 		html: (await import('./first.html?raw')).default,
@@ -35,5 +44,15 @@ export const level_list: Level[] = [
 	{
 		title: 'Not Buttons',
 		html: (await import('./not-buttons.html?raw')).default,
+	},
+
+	// Attribute Selectors
+	{
+		title: 'Alternative Text',
+		html: (await import('./alt-text.html?raw')).default,
+	},
+	{
+		title: 'Form',
+		html: (await import('./form.html?raw')).default,
 	},
 ]

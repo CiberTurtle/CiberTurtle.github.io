@@ -44,6 +44,10 @@ html {
 	color: var(--yellow);
 }
 
+.hljs-symbol {
+	color: var(--pink);
+}
+
 
 // CSS
 .hljs-selector-tag {
@@ -60,4 +64,8 @@ html {
 
 .hljs-selector-pseudo {
 	color: var(--lime);
+}
+
+.hljs-selector-attr {
+	color: var(--orange);
 }
